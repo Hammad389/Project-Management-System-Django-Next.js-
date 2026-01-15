@@ -1,0 +1,18 @@
+@import "tailwindcss";
+:root {
+  --bg: 248 250 252;        /* slate-50 */
+  --panel: 255 255 255;     /* white */
+  --text: 15 23 42;         /* slate-900 */
+  --muted: 71 85 105;       /* slate-600 */
+  --border: 226 232 240;    /* slate-200 */
+  --primary: 79 70 229;     /* indigo-600 */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
