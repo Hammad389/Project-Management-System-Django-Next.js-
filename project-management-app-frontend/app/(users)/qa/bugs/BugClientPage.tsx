@@ -159,7 +159,7 @@ export default function QABugs({ accessToken }: { accessToken: string }) {
                 onChange={(e) => setQ(e.target.value)}
               />
 
-              <Select value={status} onChange={(e) => setStatus(e.target.value as any)}>
+              <Select value={status} onChange={(e) => setStatus(e.target.value as BugStatus | "All")}>
                 <option value="All">All Status</option>
                 <option value="NEW">New</option>
                 <option value="TRIAGED">Triaged</option>
@@ -168,7 +168,7 @@ export default function QABugs({ accessToken }: { accessToken: string }) {
                 <option value="CLOSED">Closed</option>
               </Select>
 
-              <Select value={severity} onChange={(e) => setSeverity(e.target.value as any)}>
+              <Select value={severity} onChange={(e) => setSeverity(e.target.value as Priority | "All")}>
                 <option value="All">All Severity</option>
                 <option value="LOW">Low</option>
                 <option value="MEDIUM">Medium</option>

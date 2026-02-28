@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from permissions.permissions import isProjectManager
+from permissions.permissions import isProjectManager, isDeveloper
 from ..serializer.serializer import TaskCreateSerializer, TaskListSerializer
 from ...infrastructure.models.tasks import TASK
 
@@ -55,3 +55,11 @@ class TaskSoftDeleteAPIView(APIView):
             {"detail": "Task marked as completed"},
             status=status.HTTP_200_OK
         )
+
+class DevTaskListAPIView(APIView):
+    authentication_classes=[JWTAuthentication]
+    permission_classes=[IsAuthenticated, isDeveloper]
+
+    def get(self, request):
+        tasks = TASK.objects.filter(assignee=request.user, is_deleted=False)
+        return Response(TaskListSerializer(tasks, many=True).data)

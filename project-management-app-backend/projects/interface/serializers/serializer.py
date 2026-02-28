@@ -44,6 +44,7 @@ class ProjectCreateSerializer(serializers.ModelSerializer):
             "id",
             "title",
             "project_description",
+            "status",
             "due_date",
             "developers",
             "qas",
@@ -59,6 +60,7 @@ class ProjectCreateSerializer(serializers.ModelSerializer):
         qas = validated_data.pop("qas", [])
 
         project = PROJECT.objects.create(
+            project_code=f"PRJ-{PROJECT.objects.count() + 1:03}",
             project_manager=request.user,
             **validated_data
         )

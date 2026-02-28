@@ -20,5 +20,5 @@ const nav = [
 ];
 
 export default function PMLayout({ children }: { children: React.ReactNode }) {
-  return <AppShell role="PM" nav={nav} hint="Plan, assign, track delivery & quality." children={children} />;
+  return <AppShell role="PM" nav={nav} hint="Plan, assign, track delivery & quality.">{children}</AppShell>;
 }

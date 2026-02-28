@@ -54,11 +54,14 @@ class BugCreateSerializer(serializers.ModelSerializer):
 class BugProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = PROJECT
-        fields = ["id", "title"]
+        fields = ["id", "title", "project_code"]
 
 
 class BugListSerializer(serializers.ModelSerializer):
-    project = BugProjectSerializer(read_only=True)
+    project = serializers.SerializerMethodField()
+
+    def get_project(self, obj):
+        return {"id": obj.project.id, "title": obj.project.title, "code": obj.project.project_code}
     reported_by = SimpleUserSerializer(read_only=True)
     assigned_to = SimpleUserSerializer(read_only=True)
 

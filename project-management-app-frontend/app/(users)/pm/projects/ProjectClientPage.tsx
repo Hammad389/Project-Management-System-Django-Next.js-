@@ -78,7 +78,6 @@ export default function PMProjects({
         },
         body: JSON.stringify(draft),
       });
-      console.log(res.json())
       if (!res.ok) throw new Error("Create failed");
 
       setOpen(false);
@@ -124,7 +123,7 @@ export default function PMProjects({
               />
               <Select
                 value={status}
-                onChange={(e) => setStatus(e.target.value as any)}
+                onChange={(e) => setStatus(e.target.value as ProjectStatus | "All")}
               >
                 <option value="All">All Status</option>
                 <option value="Active">Active</option>

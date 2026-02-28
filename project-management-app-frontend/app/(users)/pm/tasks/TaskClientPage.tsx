@@ -153,7 +153,7 @@ export default function PMTasks({ accessToken }: { accessToken: string }) {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
               />
-              <Select value={status} onChange={(e) => setStatus(e.target.value as any)}>
+              <Select value={status} onChange={(e) => setStatus(e.target.value as TaskStatus | "All")}>
                 <option value="All">All Status</option>
                 <option value="BACKLOG">Backlog</option>
                 <option value="IN_PROGRESS">In Progress</option>

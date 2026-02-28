@@ -19,5 +19,5 @@ const nav = [
 ];
 
 export default function DevLayout({ children }: { children: React.ReactNode }) {
-  return <AppShell role="DEV" nav={nav} hint="Build, review, ship with confidence." children={children} />;
+  return <AppShell role="DEV" nav={nav} hint="Build, review, ship with confidence.">{children}</AppShell>;
 }

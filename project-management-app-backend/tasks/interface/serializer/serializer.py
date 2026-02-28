@@ -64,11 +64,17 @@ class TaskCreateSerializer(serializers.ModelSerializer):
         return task
 
 
+class TaskProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PROJECT
+        fields = ["id", "title"]
+
+
 # -----------------------------
 # LIST TASKS (PM / DEV / QA)
 # -----------------------------
 class TaskListSerializer(serializers.ModelSerializer):
-    project = serializers.StringRelatedField()
+    project = TaskProjectSerializer(read_only=True)
     assignee = SimpleUserSerializer(read_only=True)
     created_by = SimpleUserSerializer(read_only=True)
 

@@ -97,7 +97,7 @@ export default function DevTasks({ accessToken }: { accessToken: string }) {
 
               <Select
                 value={status}
-                onChange={(e) => setStatus(e.target.value as any)}
+                onChange={(e) => setStatus(e.target.value as TaskStatus | "All")}
               >
                 <option value="All">All Status</option>
                 <option value="BACKLOG">Backlog</option>
@@ -108,7 +108,7 @@ export default function DevTasks({ accessToken }: { accessToken: string }) {
 
               <Select
                 value={priority}
-                onChange={(e) => setPriority(e.target.value as any)}
+                onChange={(e) => setPriority(e.target.value as Priority | "All")}
               >
                 <option value="All">All Priority</option>
                 <option value="LOW">Low</option>

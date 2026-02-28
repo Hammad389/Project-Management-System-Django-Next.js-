@@ -19,5 +19,5 @@ const nav = [
 ];
 
 export default function QALayout({ children }: { children: React.ReactNode }) {
-  return <AppShell role="QA" nav={nav} hint="Verify releases, log bugs, protect quality." children={children} />;
+  return <AppShell role="QA" nav={nav} hint="Verify releases, log bugs, protect quality.">{children}</AppShell>;
 }
