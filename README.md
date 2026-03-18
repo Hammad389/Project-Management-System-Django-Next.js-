@@ -7,6 +7,12 @@ This project was implemented within a limited timeframe with a strong focus on *
 
 ---
 
+## Demo
+![Dashboard](demo/dashboard.png)
+![LoginPage](demo/login_page.png)
+![PMPortal](demo/pm_portal.png)
+![Task Form](demo/task_creation.png)
+
 ## 🚀 Tech Stack
 
 ### Backend
