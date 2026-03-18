@@ -8,9 +8,16 @@ This project was implemented within a limited timeframe with a strong focus on *
 ---
 
 ## Demo
+# Dashboard
 ![Dashboard](demo/dashboard.png)
+
+# Login Page
 ![LoginPage](demo/login_page.png)
+
+# PM Portal
 ![PMPortal](demo/pm_portal.png)
+
+# Task Creation Form
 ![Task Form](demo/task_creation.png)
 
 ## 🚀 Tech Stack
