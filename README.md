@@ -7,7 +7,6 @@ This project was implemented within a limited timeframe with a strong focus on *
 
 ---
 
-## Demo
 # Dashboard
 ![Dashboard](demo/dashboard.png)
 
